@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust Adventures</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Playfair Display', serif;
+      background-color: #f4e1d2;
+      color: #2b1c10;
+    }
+    header {
+      background: url('https://i.ibb.co/Dg90g9pg/Nature.jpg') center/cover no-repeat;
+      padding: 60px 30px;
+      text-align: center;
+      border-bottom: 2px solid #b87264;
+      animation: fadeIn 2s ease;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 4em;
+      color: #fff8f0;
+      letter-spacing: 2px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+    }
+    header p {
+      color: #f4e1d2;
+      font-size: 1.2em;
+      margin-top: 10px;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      background-color: #f4e1d2;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      border-bottom: 1px solid #b87264;
+      animation: fadeIn 2.5s ease;
+      font-size: 0.85em;
+      flex-wrap: wrap;
+    }
+    nav a {
+      text-decoration: none;
+      color: #2b1c10;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s;
+      white-space: nowrap;
+    }
+    nav a:hover {
+      color: #b87264;
+    }
+    section {
+      padding: 50px;
+      display: none;
+      animation: fadeIn 2s ease;
+    }
+    section.active {
+      display: block;
+    }
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      animation: fadeIn 3s ease;
+    }
+    .package-card {
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      overflow: hidden;
+      text-align: center;
+      transition: transform 0.3s;
+      border: 1px solid #b87264;
+    }
+    .package-card:hover {
+      transform: scale(1.03);
+    }
+    .package-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .package-card h3 {
+      margin: 15px 0 5px;
+      color: #2b1c10;
+      font-size: 1.6em;
+    }
+    .package-card p {
+      padding: 0 20px 10px;
+      color: #555;
+      font-size: 1em;
+    }
+    .package-card .price {
+      font-size: 1.2em;
+      color: #b87264;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      margin-top: 30px;
+    }
+    form input, form select, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #b87264;
+      border-radius: 6px;
+    }
+    form button {
+      background-color: #b87264;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    form button:hover {
+      opacity: 0.9;
+    }
+    footer {
+      text-align: center;
+      padding: 25px;
+      background-color: #e1d4c1;
+      margin-top: 50px;
+      font-size: 0.9em;
+      border-top: 2px solid #b87264;
+      animation: fadeIn 2.5s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Wanderlust Adventures</h1>
+    <p>Your gateway to luxury spontaneous travel</p>
+  </header>
+  <nav>
+    <a onclick="showPage('home')">Home</a>
+    <a onclick="showPage('packages')">Holiday Packages</a>
+    <a onclick="showPage('about')">About Us</a>
+    <a onclick="showPage('contact')">Contact Us</a>
+  </nav>
+
+  <section id="home" class="active">
+    <h2>Welcome to Wanderlust Adventures</h2>
+    <p>Luxury spontaneous travel experiences curated exclusively for those with a taste for elegance, discovery, and surprise. Four extraordinary trips a year designed to fit effortlessly into your sophisticated lifestyle.</p>
+  </section>
+
+  <section id="packages">
+    <h2>Holiday Packages</h2>
+    <div class="package-grid">
+      <div class="package-card">
+        <img src="https://i.ibb.co/20tgqYQd/Mountain.jpg" alt="Mountain">
+        <h3>Alpine Bliss</h3>
+        <p>Breathtaking mountain escapes with fresh air, luxury lodges, and private trails.</p>
+        <p class="price">₹2,65,000 per person</p>
+      </div>
+      <div class="package-card">
+        <img src="https://i.ibb.co/1GTyj7gJ/download.jpg" alt="Beach">
+        <h3>Seaside Serenity</h3>
+        <p>Opulent beach villas, gourmet dining, and exclusive access to private shores.</p>
+        <p class="price">₹3,15,000 per person</p>
+      </div>
+      <div class="package-card">
+        <img src="https://i.ibb.co/PvHpGmBy/Vibrant-city.jpg" alt="City">
+        <h3>Urban Explorer</h3>
+        <p>Discover world-class cities with five-star accommodations and private city tours.</p>
+        <p class="price">₹3,30,000 per person</p>
+      </div>
+      <div class="package-card">
+        <img src="https://i.ibb.co/Vc64dZvy/unnamed.png" alt="Culture">
+        <h3>Cultural Wonders</h3>
+        <p>Exclusive cultural immersions with private guides and luxury transport.</p>
+        <p class="price">₹2,95,000 per person</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About Us</h2>
+    <p>Wanderlust Adventures is designed for discerning travelers who value surprise as much as sophistication. Our team curates elite experiences where every detail reflects elegance and exclusivity. Trust us to deliver opulent journeys with unforgettable moments.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>We invite you to connect with our concierge team for bespoke travel inquiries or membership options.</p>
+    <p>Email: concierge@wanderlustadventures.com</p>
+    <p>Phone: +91 98765 43210</p>
+    <p>Address: 789 Luxury Avenue, Prestige Enclave, Mumbai, India</p>
+
+    <h3>Register Your Interest</h3>
+    <form onsubmit="saveFormData(event)">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="phone">Phone Number:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+      <label for="package">Preferred Package:</label>
+      <select id="package" name="package" required>
+        <option value="">Select a package</option>
+        <option value="Alpine Bliss">Alpine Bliss</option>
+        <option value="Seaside Serenity">Seaside Serenity</option>
+        <option value="Urban Explorer">Urban Explorer</option>
+        <option value="Cultural Wonders">Cultural Wonders</option>
+      </select>
+
+      <label for="message">Any Special Requests:</label>
+      <textarea id="message" name="message" rows="4" placeholder="Let us know any special preferences or requirements..."></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Wanderlust Adventures | Luxury Travel for the Spontaneous Elite</p>
+  </footer>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
+      document.getElementById(pageId).classList.add('active');
+    }
+
+    function saveFormData(event) {
+      event.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const packageSelected = document.getElementById('package').value;
+      const message = document.getElementById('message').value;
+
+      console.log('Form Data Submitted:', { name, email, phone, packageSelected, message });
+      alert('Thank you for registering your interest! We will get in touch soon.');
+
+      // In a real setup, here you'd integrate with Firebase, Airtable, or another backend
+    }
+  </script>
+</body>
+</html>
