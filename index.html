@@ -13,7 +13,7 @@
       color: #2b1c10;
     }
     header {
-      background: url('https://i.ibb.co/Dg90g9pg/Nature.jpg') center/cover no-repeat;
+      background: url('https://i.ibb.co/27xzQgcw/download.jpg') center/cover no-repeat;
       padding: 60px 30px;
       text-align: center;
       border-bottom: 2px solid #b87264;
@@ -27,8 +27,8 @@
       text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
     }
     header p {
-      color: #f4e1d2;
-      font-size: 1.2em;
+      color: #4b2e22;
+      font-size: 1.5em;
       margin-top: 10px;
     }
     nav {
@@ -40,7 +40,7 @@
       box-shadow: 0 2px 8px rgba(0,0,0,0.05);
       border-bottom: 1px solid #b87264;
       animation: fadeIn 2.5s ease;
-      font-size: 0.85em;
+      font-size: 1em;
       flex-wrap: wrap;
     }
     nav a {
@@ -82,7 +82,7 @@
     }
     .package-card img {
       width: 100%;
-      height: 220px;
+      height: auto;
       object-fit: cover;
     }
     .package-card h3 {
@@ -129,6 +129,20 @@
     form button:hover {
       opacity: 0.9;
     }
+    .goto-packages-btn {
+      background-color: #b87264;
+      color: #fff;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1.1em;
+      margin-top: 25px;
+      transition: background-color 0.3s;
+    }
+    .goto-packages-btn:hover {
+      background-color: #9f5f53;
+    }
     footer {
       text-align: center;
       padding: 25px;
@@ -150,15 +164,16 @@
     <p>Your gateway to luxury spontaneous travel</p>
   </header>
   <nav>
-    <a onclick="showPage('home')">Home</a>
-    <a onclick="showPage('packages')">Holiday Packages</a>
-    <a onclick="showPage('about')">About Us</a>
-    <a onclick="showPage('contact')">Contact Us</a>
+    <a href="#home" onclick="showPage('home')">Home</a>
+    <a href="#packages" onclick="showPage('packages')">Holiday Packages</a>
+    <a href="#about" onclick="showPage('about')">About Us</a>
+    <a href="#contact" onclick="showPage('contact')">Contact Us</a>
   </nav>
 
   <section id="home" class="active">
     <h2>Welcome to Wanderlust Adventures</h2>
     <p>Luxury spontaneous travel experiences curated exclusively for those with a taste for elegance, discovery, and surprise. Four extraordinary trips a year designed to fit effortlessly into your sophisticated lifestyle.</p>
+    <button class="goto-packages-btn" onclick="showPage('packages')">Explore Holiday Packages</button>
   </section>
 
   <section id="packages">
@@ -237,7 +252,9 @@
   <script>
     function showPage(pageId) {
       document.querySelectorAll('section').forEach(section => section.classList.remove('active'));
-      document.getElementById(pageId).classList.add('active');
+      const targetSection = document.getElementById(pageId);
+      targetSection.classList.add('active');
+      window.scrollTo({ top: targetSection.offsetTop - 80, behavior: 'smooth' });
     }
 
     function saveFormData(event) {
@@ -250,8 +267,6 @@
 
       console.log('Form Data Submitted:', { name, email, phone, packageSelected, message });
       alert('Thank you for registering your interest! We will get in touch soon.');
-
-      // In a real setup, here you'd integrate with Firebase, Airtable, or another backend
     }
   </script>
 </body>
