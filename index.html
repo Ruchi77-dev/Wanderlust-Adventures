@@ -76,14 +76,22 @@
       text-align: center;
       transition: transform 0.3s;
       border: 1px solid #b87264;
-    }
-    .package-card:hover {
-      transform: scale(1.03);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
     }
     .package-card img {
       width: 100%;
       height: 250px;
       object-fit: cover;
+    }
+    .package-card-content {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-bottom: 20px;
     }
     .package-card h3 {
       margin: 15px 0 5px;
@@ -181,27 +189,35 @@
     <div class="package-grid">
       <div class="package-card">
         <img src="https://i.ibb.co/20tgqYQd/Mountain.jpg" alt="Mountain">
-        <h3>Alpine Bliss</h3>
-        <p>Breathtaking mountain escapes with fresh air, luxury lodges, and private trails.</p>
-        <p class="price">₹2,65,000 per person</p>
+        <div class="package-card-content">
+          <h3>Alpine Bliss</h3>
+          <p>Breathtaking mountain escapes with fresh air, luxury lodges, and private trails.</p>
+          <p class="price">₹2,65,000 per person</p>
+        </div>
       </div>
       <div class="package-card">
         <img src="https://i.ibb.co/1GTyj7gJ/download.jpg" alt="Beach">
-        <h3>Seaside Serenity</h3>
-        <p>Opulent beach villas, gourmet dining, and exclusive access to private shores.</p>
-        <p class="price">₹3,15,000 per person</p>
+        <div class="package-card-content">
+          <h3>Seaside Serenity</h3>
+          <p>Opulent beach villas, gourmet dining, and exclusive access to private shores.</p>
+          <p class="price">₹3,15,000 per person</p>
+        </div>
       </div>
       <div class="package-card">
         <img src="https://i.ibb.co/PvHpGmBy/Vibrant-city.jpg" alt="City">
-        <h3>Urban Explorer</h3>
-        <p>Discover world-class cities with five-star accommodations and private city tours.</p>
-        <p class="price">₹3,30,000 per person</p>
+        <div class="package-card-content">
+          <h3>Urban Explorer</h3>
+          <p>Discover world-class cities with five-star accommodations and private city tours.</p>
+          <p class="price">₹3,30,000 per person</p>
+        </div>
       </div>
       <div class="package-card">
         <img src="https://i.ibb.co/Vc64dZvy/unnamed.png" alt="Culture">
-        <h3>Cultural Wonders</h3>
-        <p>Exclusive cultural immersions with private guides and luxury transport.</p>
-        <p class="price">₹2,95,000 per person</p>
+        <div class="package-card-content">
+          <h3>Cultural Wonders</h3>
+          <p>Exclusive cultural immersions with private guides and luxury transport.</p>
+          <p class="price">₹2,95,000 per person</p>
+        </div>
       </div>
     </div>
   </section>
@@ -271,4 +287,3 @@
   </script>
 </body>
 </html>
-
