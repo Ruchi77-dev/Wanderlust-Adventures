@@ -80,6 +80,7 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+      cursor: pointer; /* Indicate it's clickable */
     }
     .package-card img {
       width: 100%;
@@ -91,7 +92,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      padding-bottom: 20px;
+      padding: 15px 20px 20px; /* Adjusted padding to accommodate the button */
     }
     .package-card h3 {
       margin: 15px 0 5px;
@@ -99,15 +100,48 @@
       font-size: 1.6em;
     }
     .package-card p {
-      padding: 0 20px 10px;
       color: #555;
       font-size: 1em;
+      margin-bottom: 10px; /* Reduced margin */
     }
     .package-card .price {
       font-size: 1.2em;
       color: #b87264;
-      margin-bottom: 20px;
+      margin-bottom: 15px; /* Reduced margin */
       font-weight: 700;
+    }
+    .package-details {
+      padding: 15px 20px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #eee;
+      text-align: left;
+      display: none; /* Initially hidden */
+    }
+    .package-details h4 {
+      color: #b87264;
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-size: 1.1em;
+    }
+    .package-details p {
+      color: #777;
+      font-size: 0.95em;
+      margin-bottom: 8px;
+    }
+    .view-details-btn {
+      background-color: transparent;
+      color: #b87264;
+      border: 1px solid #b87264;
+      padding: 8px 15px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: background-color 0.3s, color 0.3s;
+      margin-top: 10px;
+    }
+    .view-details-btn:hover {
+      background-color: #b87264;
+      color: white;
     }
     form {
       max-width: 500px;
@@ -193,6 +227,14 @@
           <h3>Alpine Bliss</h3>
           <p>Breathtaking mountain escapes with fresh air, luxury lodges, and private trails.</p>
           <p class="price">₹2,65,000 per person</p>
+          <button class="view-details-btn" onclick="toggleDetails(this)">View Details</button>
+        </div>
+        <div class="package-details">
+          <h4>Package Highlights:</h4>
+          <p><strong>Duration:</strong> 7 Days / 6 Nights</p>
+          <p><strong>Activities:</strong> Skiing, Snowboarding, Hiking, Spa Treatments</p>
+          <p><strong>Accommodation:</strong> Luxury Mountain Lodge with stunning views.</p>
+          <p>Experience the thrill of the slopes and the tranquility of the mountains.</p>
         </div>
       </div>
       <div class="package-card">
@@ -201,6 +243,14 @@
           <h3>Seaside Serenity</h3>
           <p>Opulent beach villas, gourmet dining, and exclusive access to private shores.</p>
           <p class="price">₹3,15,000 per person</p>
+          <button class="view-details-btn" onclick="toggleDetails(this)">View Details</button>
+        </div>
+        <div class="package-details">
+          <h4>Package Highlights:</h4>
+          <p><strong>Duration:</strong> 5 Days / 4 Nights</p>
+          <p><strong>Activities:</strong> Snorkeling, Diving, Private Beach Access, Sunset Cruises</p>
+          <p><strong>Accommodation:</strong> Luxurious Overwater Bungalow with direct ocean access.</p>
+          <p>Indulge in the ultimate relaxation by the sea.</p>
         </div>
       </div>
       <div class="package-card">
@@ -209,6 +259,14 @@
           <h3>Urban Explorer</h3>
           <p>Discover world-class cities with five-star accommodations and private city tours.</p>
           <p class="price">₹3,30,000 per person</p>
+          <button class="view-details-btn" onclick="toggleDetails(this)">View Details</button>
+        </div>
+        <div class="package-details">
+          <h4>Package Highlights:</h4>
+          <p><strong>Duration:</strong> 4 Days / 3 Nights</p>
+          <p><strong>Activities:</strong> Guided City Tours, Fine Dining Experiences, Museum Visits, Exclusive Shopping</p>
+          <p><strong>Accommodation:</strong> Stay in a prestigious Five-Star Hotel in the city center.</p>
+          <p>Explore the vibrant culture and iconic landmarks of the world's greatest cities.</p>
         </div>
       </div>
       <div class="package-card">
@@ -217,6 +275,14 @@
           <h3>Cultural Wonders</h3>
           <p>Exclusive cultural immersions with private guides and luxury transport.</p>
           <p class="price">₹2,95,000 per person</p>
+          <button class="view-details-btn" onclick="toggleDetails(this)">View Details</button>
+        </div>
+        <div class="package-details">
+          <h4>Package Highlights:</h4>
+          <p><strong>Duration:</strong> 6 Days / 5 Nights</p>
+          <p><strong>Activities:</strong> Historical Site Visits, Local Cuisine Workshops, Traditional Performances, Art Exhibitions</p>
+          <p><strong>Accommodation:</strong> Immerse yourself in luxury at a Heritage Hotel or a Boutique Resort.</p>
+          <p>Uncover the rich history and traditions of fascinating cultures.</p>
         </div>
       </div>
     </div>
@@ -283,6 +349,18 @@
 
       console.log('Form Data Submitted:', { name, email, phone, packageSelected, message });
       alert('Thank you for registering your interest! We will get in touch soon.');
+    }
+
+    function toggleDetails(button) {
+      const packageCard = button.closest('.package-card');
+      const details = packageCard.querySelector('.package-details');
+      if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block';
+        button.textContent = 'Hide Details';
+      } else {
+        details.style.display = 'none';
+        button.textContent = 'View Details';
+      }
     }
   </script>
 </body>
